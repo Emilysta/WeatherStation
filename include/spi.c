@@ -37,7 +37,7 @@ void spi_init()
     //SCK,MOSI,CS as output from microcontroller
     DDRB |= (1 << 7) | (1 << 5) | (1 << 4);
     PORTB |= (1 << 4);
-    /*set eanble, set as master,set f_osc/64 - only spr1 to 1*/
+    /*set eanble, set as master,set f_osc/32 - only spr1 to 1*/
     SPCR |= (1 << SPE) | (1 << MSTR) | (1 << SPR1);
     SPCR |= (1 << CPOL) | (1 << CPHA); //set spi mode=3
     SPCR &= ~(1 << DORD);              //set 0 on  DORD to transmit MSB first
